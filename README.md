@@ -1,17 +1,17 @@
 # Kubernetes相关的github资源整理
-    apiserver： https://github.com/kubernetes/apiserver
-    kubernetes： https://github.com/kubernetes/kubernetes
-    kube-controller-manager： https://github.com/kubernetes/kube-controller-manager
-    kube-scheduler： https://github.com/kubernetes/kube-scheduler
-    kube-proxy： https://github.com/kubernetes/kube-proxy
-    kubelet： https://github.com/kubernetes/kubelet
-    kubectl： https://github.com/kubernetes/kubectl
-    minikube： https://github.com/kubernetes/minikube
+    apiserver：https://github.com/kubernetes/apiserver
+    kubernetes：https://github.com/kubernetes/kubernetes
+    kube-controller-manager：https://github.com/kubernetes/kube-controller-manager
+    kube-scheduler：https://github.com/kubernetes/kube-scheduler
+    kube-proxy：https://github.com/kubernetes/kube-proxy
+    kubelet：https://github.com/kubernetes/kubelet
+    kubectl：https://github.com/kubernetes/kubectl
+    minikube：https://github.com/kubernetes/minikube
     kubeadm：https://github.com/kubernetes/kubeadm
     kube-dns：https://github.com/kubernetes/dns
     coredns：https://github.com/coredns/coredns
-    etcd： https://github.com/coreos/etcd-operator
-    consul： https://github.com/hashicorp/consul
+    etcd：https://github.com/coreos/etcd-operator
+    consul：https://github.com/hashicorp/consul
     kubernetes-example：https://github.com/kubernetes/examples
     kube-contrib： https://github.com/kubernetes/contrib
     dashboard工具： https://github.com/kubernetes/dashboard
