@@ -52,3 +52,7 @@ metrics-server：https://github.com/kubernetes/metrics
 jenkins： https://github.com/jenkinsci/jenkins
 
 grafana-kubernetes-apps： https://github.com/grafana/kubernetes-app
+
+docker-hub： https://hub.docker.com/
+
+kubeapps-hub： https://hub.kubeapps.com/
