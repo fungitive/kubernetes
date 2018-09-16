@@ -1,4 +1,5 @@
 # Kubernetes相关的github资源整理
+
 apiserver：https://github.com/kubernetes/apiserver
 
 kubernetes：https://github.com/kubernetes/kubernetes
@@ -60,6 +61,8 @@ docker-hub： https://hub.docker.com/
 
 kubeapps-hub： https://hub.kubeapps.com/
 
-helm官网： https://helm.sh/
+kubernetes官方文档： https://kubernetes.io/docs/home
 
-calico官网：https://helm.sh/
+helm官方文档： https://docs.helm.sh/
+
+calico官方文档：https://docs.projectcalico.org/v3.2/introduction/
