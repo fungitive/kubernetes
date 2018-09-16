@@ -79,3 +79,5 @@ kubernetes官方文档： https://kubernetes.io/docs/home
 helm官方文档： https://docs.helm.sh/
 
 calico官方文档：https://docs.projectcalico.org/v3.2/introduction/
+
+渗透测试工具kube-hunter： https://github.com/aquasecurity/kube-hunter
