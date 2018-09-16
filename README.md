@@ -46,14 +46,27 @@ calico： https://github.com/projectcalico/calico
 
 metrics-server：https://github.com/kubernetes/metrics
 
-镜像仓库harbor： https://github.com/goharbor/harbor
-
-镜像仓库nexus3： https://github.com/sonatype/docker-nexus3
-
 jenkins： https://github.com/jenkinsci/jenkins
 
 grafana-kubernetes-apps： https://github.com/grafana/kubernetes-app
 
+日志
+
+elasticsearch：https://github.com/elastic/elasticsearch
+
+kibana： https://github.com/elastic/kibana
+
+filebeats： https://github.com/elastic/beats
+
+logstash：https://github.com/elastic/logstash
+
+fluentd： https://github.com/fluent/fluentd
+
+仓库
+
+镜像仓库harbor： https://github.com/goharbor/harbor
+
+镜像仓库nexus3： https://github.com/sonatype/docker-nexus3
 
 ## 其他资源
 
