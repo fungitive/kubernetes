@@ -53,6 +53,13 @@ jenkins： https://github.com/jenkinsci/jenkins
 
 grafana-kubernetes-apps： https://github.com/grafana/kubernetes-app
 
+
+## 其他资源
+
 docker-hub： https://hub.docker.com/
 
 kubeapps-hub： https://hub.kubeapps.com/
+
+helm官网： https://helm.sh/
+
+calico官网：https://helm.sh/
