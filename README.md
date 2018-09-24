@@ -40,6 +40,8 @@ heapster：https://github.com/kubernetes/heapster
 
 metrics-server:https://github.com/kubernetes-incubator/metrics-server   #取代heapster
 
+metrics-server: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/metrics-server  #上边安装不成功请使用这个
+
 prometheus监控： https://github.com/prometheus/prometheus
 
 helm： https://github.com/helm/helm
