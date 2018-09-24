@@ -34,6 +34,12 @@ dashboard工具： https://github.com/kubernetes/dashboard
 
 ingress-nginx： https://github.com/kubernetes/ingress-nginx
 
+traefik：https://github.com/containous/traefik ingress的一种解决方案
+
+heapster：https://github.com/kubernetes/heapster
+
+metrics-server:https://github.com/kubernetes-incubator/metrics-server   #取代heapster
+
 prometheus监控： https://github.com/prometheus/prometheus
 
 helm： https://github.com/helm/helm
