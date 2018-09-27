@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: jenkins
+spec:
+    tls:
+    - hosts:
+    - autobuild.test.com
+    secretName: jenkins-secret
+    rules:
+    - host: autobuild.test.com
+    http:
+    paths:
+       - backend:
+    serviceName: jenkins
+    servicePort: 8080
+    path: /
