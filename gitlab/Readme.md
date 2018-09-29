@@ -20,3 +20,5 @@
 
 
   Helm chart based on this manifests: https://github.com/lwolf/gitlab-chart
+
+https://blog.lwolf.org/post/how-to-easily-deploy-gitlab-on-kubernetes/
