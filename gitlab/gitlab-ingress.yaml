@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gitlab
+  namespace: gitlab
+  labels:
+    name: gitlab
+spec:
+  rules:
+  - host: git.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitlab
+          servicePort: 80
+  - host: git-ssh.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitlab
+          servicePort: 1022
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tcp-gitlab-configmap
+  namespace: gitlab
+data:
+  1022: "gitlab/gitlab:1022"
