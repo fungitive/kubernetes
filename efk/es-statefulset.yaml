@@ -25,7 +25,8 @@ spec:
     spec:
       serviceAccountName: elasticsearch-logging
       containers:
-      - image: k8s.gcr.io/elasticsearch:v6.2.5
+      - image: fungitive/elasticsearch:latest 
+        #v6.2.5
         name: elasticsearch-logging
         resources:
           # need more cpu upon initialization, therefore burstable class
