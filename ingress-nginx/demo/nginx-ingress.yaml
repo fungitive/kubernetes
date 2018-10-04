@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: feiutest.cn
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: test-ingress
+          servicePort: 80
