@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-ingress
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: test-ingress
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: test-ingress
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-ingress
+    spec:
+      containers:
+      - image: nginx:latest
+        imagePullPolicy: IfNotPresent
+        name: test-nginx
+        ports:
+        - containerPort: 80
