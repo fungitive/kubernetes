@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tomcat-ingress-traefik
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  rules:
+  - host: tomcattest.cn
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: tomcat-test
+          servicePort: 8080
