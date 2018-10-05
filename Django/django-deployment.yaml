@@ -24,7 +24,7 @@ spec:
       initContainers:
         - name: wait-redis
           image: busybox
-          command: ['sh', '-c', 'until nslookup redis.demo.svc.cluster.local; do echo waiting for redis service; sleep 2; done;']
+          command: ['sh', '-c', 'until nslookup redis.default.svc.cluster.local; do echo waiting for redis service; sleep 2; done;']
         - name: wait-postgresql
           image: busybox
-          command: ['sh', '-c', 'until nslookup postgresql.demo.svc.cluster.local; do echo waiting for postgresql service; sleep 2; done;']
+          command: ['sh', '-c', 'until nslookup postgresql.default.svc.cluster.local; do echo waiting for postgresql service; sleep 2; done;']
