@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql
+  namespace: demo
+spec:
+  ports:
+    - port: 5432
+      targetPort: postgresql-port
+  selector:
+    app: postgresql-pod
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo-postgresql
+  namespace: demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgresql-pod
+    spec:
+      nodeName: 140.xx.xx.164   # 为了数据的持久化指定调度节点为node1: 140.xx.xx.164 
+      containers:
+        - name: demo-postgresql
+          image: postgres:9.6.3
+          imagePullPolicy: Always
+
+          env:
+            - name: POSTGRES_DB
+              value: demo
+            - name: POSTGRES_USER
+              value: root
+            - name: POSTGRES_PASSWORD
+              value: devpwd
+
+          ports:
+            - name: postgresql-port
+              containerPort: 5432
+
+          volumeMounts:
+            - name: postgresql-storage
+              mountPath: /var/lib/postgresql
+
+      volumes:
+        - name: postgresql-storage
+          hostPath:
+            path: /data/postgresql   # 为了数据的持久化，使用主机hostPath方式挂载数据卷
