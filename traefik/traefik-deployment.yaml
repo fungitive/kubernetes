@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -52,4 +53,4 @@ spec:
     - protocol: TCP
       port: 8080
       name: admin
- type: NodePort
+  type: NodePort
