@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: django-pod
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: django-pod
+    spec:
+      containers:
+        - name: django-demo
+          image: 140.xx.xx.181:5000/backend:v1.0   # 你的后端打包的镜像地址（私有）
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
+          command: ["/bin/sh"]
+          args: ["-c", "python manage.py runserver 0.0.0.0:8000"]
+          # python manage.py runserver 0.0.0.0:8000 为测试使用，应使用uwsgi等方式
+
+      initContainers:
+        - name: wait-redis
+          image: busybox
+          command: ['sh', '-c', 'until nslookup redis.demo.svc.cluster.local; do echo waiting for redis service; sleep 2; done;']
+        - name: wait-postgresql
+          image: busybox
+          command: ['sh', '-c', 'until nslookup postgresql.demo.svc.cluster.local; do echo waiting for postgresql service; sleep 2; done;']
