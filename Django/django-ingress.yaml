@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: django-ingress
+  namespace: default
+spec:
+  rules:
+      paths:
+        - path: /
+          backend:
+            serviceName: django-service
+            servicePort: 80
