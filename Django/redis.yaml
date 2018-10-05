@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: default
+spec:
+  ports:
+    - port: 9200
+      targetPort: redis-port
+  selector:
+    app: redis-pod
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo-redis
+  namespace: demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis-pod
+    spec:
+      containers:
+        - name: demo-redis
+          image: redis:3.0.7
+          imagePullPolicy: Always
+
+          ports:
+            - name: redis-port
+              containerPort: 6379
