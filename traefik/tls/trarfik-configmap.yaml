@@ -1,0 +1,19 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+ name: traefik-conf
+ namespace: kube-system
+data:
+ traefik.toml: |
+   insecureSkipVerify = true
+   defaultEntryPoints = ["http","https"]
+   [entryPoints]
+     [entryPoints.http]
+     address = ":80"
+     [entryPoints.http.redirect]
+     [entryPoints.https]
+     address = ":443"
+     [entryPoints.https.tls]
+     [[entryPoints.https.tls.certificates]]
+     CertFile = "/ssl/domain.com.crt"
+     KeyFile = "/ssl/domain.com.key"
