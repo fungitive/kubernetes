@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dz-web
+  labels:
+    app: discuz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discuz
+      tier: nginx-php
+  template:
+    metadata:
+      labels:
+        app: discuz
+        tier: nginx-php
+    spec:
+      containers:
+      - image: richarvey/nginx-php-fpm
+        name: dz-web
+        ports:
+        - containerPort: 9000
+        - containerPort: 80
+          name: dz-web
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/www/html/
+      imagePullSecrets:
+      - name: my-secret
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: web-claim
