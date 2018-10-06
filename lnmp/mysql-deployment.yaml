@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dz-mysql
+  labels:
+    app: discuz
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: discuz
+      tier: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: discuz
+        tier: mysql
+    spec:
+      containers:
+      - image: mysql:5.7
+    imagePullSecrets:
+      - name: my-secret 
+        name: dz-mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+            #kubectl create secret generic mysql-pass --from-literal=password=Passwd123
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: dz-mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-claim
